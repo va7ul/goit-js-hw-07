@@ -4,7 +4,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryEl = document.querySelector('.gallery');
 
 const galleryMarkup = createGalleryMarkup(galleryItems);
-galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup)
+galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);
 
 function createGalleryMarkup(items) {
     return items.map(item => 
@@ -19,7 +19,7 @@ function createGalleryMarkup(items) {
             </a>
         </li>`)
     .join('');
-}
+};
 
 galleryEl.addEventListener('click', imageFullscreenOpener);
 
@@ -31,7 +31,7 @@ function imageFullscreenOpener(event) {
     }
 
     openImageInModal(event);
-}
+};
 
 function openImageInModal(event) {
     const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`);
@@ -42,6 +42,6 @@ function openImageInModal(event) {
             instance.close();
         };
     }, { once: true });
-}
+};
 
 console.log(galleryEl);
