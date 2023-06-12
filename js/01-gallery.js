@@ -7,14 +7,14 @@ const galleryMarkup = createGalleryMarkup(galleryItems);
 galleryEl.insertAdjacentHTML('afterbegin', galleryMarkup);
 
 function createGalleryMarkup(items) {
-    return items.map(item => 
+    return items.map(({preview, original, description}) => 
         `<li class="gallery__item">
-            <a class="gallery__link" href="${item.original}">
+            <a class="gallery__link" href="${original}">
                 <img
                     class="gallery__image"
-                    src="${item.preview}"
-                    data-source="${item.original}"
-                    alt="${item.description}"
+                    src="${preview}"
+                    data-source="${original}"
+                    alt="${description}"
                 />
             </a>
         </li>`)
